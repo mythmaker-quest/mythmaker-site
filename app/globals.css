@@ -148,7 +148,7 @@ button { font-family: inherit; }
 .card-body p { margin: 0; font-size: 15.5px; line-height: 1.55; color: rgba(239, 230, 211, 0.75); }
 
 /* ---- saga ---- */
-.saga { position: relative; padding: 130px 24px 72px; overflow: hidden; scroll-margin-top: 70px; }
+.saga { position: relative; padding: 130px 24px 40px; overflow: hidden; scroll-margin-top: 70px; }
 .saga-bg { position: absolute; inset: 0; object-fit: cover; object-position: center 38%; z-index: -2; }
 .saga-veil { position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, var(--bg) 0%, rgba(11, 8, 6, 0.78) 22%, rgba(11, 8, 6, 0.78) 78%, var(--bg) 100%); }
@@ -158,13 +158,13 @@ button { font-family: inherit; }
   text-transform: uppercase; color: rgba(239, 230, 211, 0.92); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7); }
 
 /* ---- quest ---- */
-.quest { position: relative; background: var(--bg-deep); padding: 64px 24px 130px; overflow: hidden;
+.quest { position: relative; background: var(--bg-deep); padding: 48px 24px 130px; overflow: hidden;
   text-align: center; scroll-margin-top: 70px; }
-.quest-sep { display: flex; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto 46px; }
-.quest-sep::before, .quest-sep::after { content: ''; height: 1px; flex: 1; }
-.quest-sep::before { background: linear-gradient(90deg, transparent, rgba(246, 196, 83, 0.5)); }
-.quest-sep::after { background: linear-gradient(270deg, transparent, rgba(246, 196, 83, 0.5)); }
-.quest-sep i { width: 8px; height: 8px; margin: 0 16px; flex: none; transform: rotate(45deg);
+.saga-sep { position: relative; display: flex; align-items: center; justify-content: center; max-width: 300px; margin: 42px auto 0; }
+.saga-sep::before, .saga-sep::after { content: ''; height: 1px; flex: 1; }
+.saga-sep::before { background: linear-gradient(90deg, transparent, rgba(246, 196, 83, 0.5)); }
+.saga-sep::after { background: linear-gradient(270deg, transparent, rgba(246, 196, 83, 0.5)); }
+.saga-sep i { width: 8px; height: 8px; margin: 0 16px; flex: none; transform: rotate(45deg);
   background: var(--amber); box-shadow: var(--glow-ember); }
 .quest-wolf { width: min(560px, 86vw); margin: 0 auto -14px; display: block; height: auto;
   -webkit-mask-image: radial-gradient(58% 70% at 50% 50%, #000 55%, transparent 78%);
