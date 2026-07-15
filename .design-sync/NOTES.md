@@ -46,9 +46,21 @@ Design project `be05ec27-45c9-4cde-b24b-6616c63508e0`.
   `dist/knights-quest.woff2` won't exist and the CSS/font will regress.
 - **The display font source lives at `packages/ui/fonts/knights-quest.woff2`**
   (committed). If it moves, update `bundle-css.mjs`.
-- **All 15 components ship floor cards.** No authored previews yet
-  (`.design-sync/previews/` is empty). Authoring rich previews is the standing
-  incremental follow-up — needs playwright for grading.
+- **All 15 components have authored previews** (30 cells) in
+  `.design-sync/previews/`, graded `good`. **Dark-Stage decision:** cards render
+  on white (`emit.mjs` hardcodes `body{background:#fff}` — don't fork it), but this
+  DS is dark-world, so every preview wraps its component in a small `background:
+  var(--bg)` Stage. Without it, parchment-light text is invisible on white. Keep
+  this pattern when authoring new previews.
+- **`cfg.overrides` cardMode:column on Heading + SectionIntro.** Their large
+  display type (clamp up to 52px) clips in a narrow grid cell; column mode gives
+  full-width rows. Add the same for any other wide/large-type component.
+- **Previews use live image URLs** (`https://mythmaker-site.vercel.app/photos|brand/…`)
+  for ShowCard/TiltCard/Medallion — the render + the DS pane fetch them over the
+  network. If the site's asset paths change, update the preview files.
+- **Render check runs** — playwright + chromium are installed
+  (`~/Library/Caches/ms-playwright/`, macOS path, NOT `~/.cache`). `package-validate.mjs`
+  renders every card; no `--no-render-check` needed anymore.
 - **`conventions.md` is authored** (`readmeHeader` → `.design-sync/conventions.md`),
   prepended to the DS README. Re-syncs validate its token/component names against
   the fresh build — if a name stops resolving, fix the header (don't rewrite it).

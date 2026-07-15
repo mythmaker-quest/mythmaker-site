@@ -5,5 +5,9 @@
   "shape": "package",
   "buildCmd": "npm run build --workspace @mythmaker/ui",
   "cssEntry": "dist/styles.css",
-  "readmeHeader": ".design-sync/conventions.md"
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Heading": { "cardMode": "column" },
+    "SectionIntro": { "cardMode": "column" }
+  }
 }
