@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useActionState } from 'react';
 import dims from './photo-dims.json';
+import { sendBooking } from './actions';
 
 type Dim = { w: number; h: number };
 const D = dims as Record<string, Dim>;
@@ -47,7 +48,7 @@ const STATS: [number, string, string][] = [
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lb, setLb] = useState(-1);
-  const [submitted, setSubmitted] = useState(false);
+  const [bookState, bookAction, bookPending] = useActionState(sendBooking, null);
   const [wolf, setWolf] = useState(0);
   const embersRef = useRef<HTMLCanvasElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
@@ -354,8 +355,13 @@ export default function Page() {
             <h2 className="h2">Bring the myth to your event</h2>
             <p className="lead" style={{ margin: '16px auto 34px' }}>Festivals, weddings, corporate gatherings, parades and schools. Tell us your vision — we answer within two days.</p>
           </div>
-          {!submitted ? (
-            <form className="form reveal" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+          {bookState?.ok ? (
+            <div className="book-success reveal shown">
+              <div className="skol">Sköl!</div>
+              <p style={{ margin: '12px 0 0', fontSize: 17, lineHeight: 1.6, color: 'rgba(239,230,211,.85)' }}>Your raven is away. We answer within two days, so keep an eye on the sky.</p>
+            </div>
+          ) : (
+            <form className="form reveal" action={bookAction}>
               <div className="row">
                 <input type="text" name="name" required placeholder="Your name" />
                 <input type="email" name="email" required placeholder="Email" />
@@ -373,13 +379,10 @@ export default function Page() {
                 <input type="text" name="date" placeholder="When (roughly)?" />
               </div>
               <textarea name="vision" rows={4} placeholder="Tell us about your event — where, how big, how wild" />
-              <button type="submit" className="btn btn-primary">Request a quote</button>
+              <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
+              {bookState?.error && <p style={{ margin: 0, color: '#f6b23a', fontSize: 14 }}>{bookState.error}</p>}
+              <button type="submit" className="btn btn-primary" disabled={bookPending}>{bookPending ? 'Sending…' : 'Request a quote'}</button>
             </form>
-          ) : (
-            <div className="book-success reveal shown">
-              <div className="skol">Sköl!</div>
-              <p style={{ margin: '12px 0 0', fontSize: 17, lineHeight: 1.6, color: 'rgba(239,230,211,.85)' }}>Your raven is away. We answer within two days, so keep an eye on the sky.</p>
-            </div>
           )}
           <p style={{ margin: '18px 0 0', fontSize: 15, color: 'rgba(239,230,211,.55)' }}>Or write the hall directly — <a href="mailto:mythmakerburn@gmail.com">mythmakerburn@gmail.com</a></p>
         </div>
