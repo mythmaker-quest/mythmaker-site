@@ -41,7 +41,7 @@ const GALLERY: [string, string][] = [
 const STATS: [number, string, string][] = [
   [15, '15', 'Years at Burning Man'],
   [100, '100', 'Warriors at full strength'],
-  [30000, '30,000', 'Souls at a single show'],
+  [30000, '30,000', 'Souls at our biggest show'],
   [33, '33', 'Original productions since 1999'],
 ];
 
@@ -310,7 +310,7 @@ export default function Page() {
           <div className="reveal">
             <div className="eyebrow">The Company</div>
             <h2 className="h2" style={{ fontSize: 'clamp(30px,4.4vw,44px)' }}>Guided by the swordmaster</h2>
-            <p style={{ margin: '18px 0 0', fontSize: 17, lineHeight: 1.7, color: 'rgba(239,230,211,.8)' }}><strong style={{ color: 'var(--gold)', fontWeight: 700 }}>Hjeron O’Sidhe</strong>, director, swordmaster and storyteller, has helmed MythMaker for over two decades: thirty-three original productions written, directed and scored, and twenty years spent touring them across the world. His craft is rooted in thirty years steeped in Celtic and world storytelling, ancestral ritual and the art of the blade.</p>
+            <p style={{ margin: '18px 0 0', fontSize: 17, lineHeight: 1.7, color: 'rgba(239,230,211,.8)' }}><strong style={{ color: 'var(--gold)', fontWeight: 700 }}>Hjeron O’Sidhe</strong>, director, swordmaster and storyteller, has helmed MythMaker for over two decades: thirty-three original productions written, directed and scored, and over two decades spent touring them across the world. His craft is rooted in thirty years steeped in Celtic and world storytelling, ancestral ritual and the art of the blade.</p>
             <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.7, color: 'rgba(239,230,211,.8)' }}>Around him stands a seasoned collective of professional fire artists, acrobats, stilt-walkers, musicians and makers — a company with the depth to bring the right artists to your event, from an intimate ceremony to a festival main stage.</p>
             <div className="chips">
               <span className="chip">Professional fire-safety standards</span>

@@ -11,8 +11,9 @@ app, so changes are code edits here — no more export-and-re-optimize loop.
 - **Next.js 15** (App Router, TypeScript), single home page, statically prerendered.
 - **`next/image`** — every photo is optimized automatically (AVIF/WebP, responsive sizes, lazy).
   Sources live in `public/photos/`; add a photo and its dimensions to `app/photo-dims.json`.
-- **`next/font`** — Knights Quest (display headings) + PR Viking (hero eyebrow) self-hosted from
-  `app/fonts/*.woff2`; Cinzel, Alegreya, IM Fell English from Google, all self-hosted at build.
+- **`next/font`** — **Knights Quest** for all display type (headings + hero eyebrow), self-hosted from
+  `app/fonts/`; Cinzel, Alegreya, IM Fell English from Google, all self-hosted at build. (PR Viking
+  retired; `pr-viking.woff2` kept in `app/fonts/` as an unused alternate.)
 - Design tokens + keyframes in `app/globals.css`; the page and all interactions in `app/page.tsx`
   (ember hero canvas, count-up stats, reveal-on-scroll, 3D Quest cards, gallery lightbox, mobile
   nav, quote form, the "wolf" easter egg, and `prefers-reduced-motion`).
