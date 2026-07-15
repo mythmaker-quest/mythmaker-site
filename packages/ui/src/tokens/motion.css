@@ -1,0 +1,24 @@
+:root {
+  --ease-settle: cubic-bezier(0.2, 0.7, 0.2, 1);   /* reveals */
+  --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);     /* tilt/magnetic return */
+  --dur-hover: 0.2s;
+  --dur-reveal: 1.15s;
+  --dur-countup: 1600ms;
+}
+
+/* brand keyframes */
+@keyframes mmKen { from { transform: scale(1.09); } to { transform: scale(1.01); } }
+@keyframes mmGlow { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.95; } }
+@keyframes mmBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+@keyframes mmSheen { 0% { background-position: 180% 0; } 55% { background-position: -80% 0; } 100% { background-position: -80% 0; } }
+@keyframes mmMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* reveal-on-scroll: cinematic focus-pull (JS adds .shown via IntersectionObserver, once) */
+.reveal { opacity: 0; transform: translateY(32px) scale(0.985); filter: blur(7px);
+  transition: opacity 0.9s ease, transform var(--dur-reveal) var(--ease-settle), filter 1s ease; }
+.reveal.shown { opacity: 1; transform: none; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+}

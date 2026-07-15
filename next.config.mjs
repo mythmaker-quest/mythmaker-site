@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['@mythmaker/ui'],
   images: {
     formats: ['image/avif', 'image/webp'],
   },

@@ -1,0 +1,36 @@
+:root {
+  /* radii — sharp is intentional */
+  --radius-btn: 2px;
+  --radius-input: 3px;
+  --radius-img: 4px;
+  --radius-card: 6px;
+  --radius-quest-card: 10px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* shadows */
+  --shadow-cta: 0 6px 30px rgba(232, 149, 30, 0.36);
+  --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.65);
+  --shadow-photo: 0 24px 70px rgba(0, 0, 0, 0.5);
+  --shadow-lightbox: 0 30px 100px rgba(0, 0, 0, 0.75);
+  --shadow-menu: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  /* glows — firelight */
+  --glow-logo: drop-shadow(0 4px 26px rgba(232, 149, 30, 0.35));
+  --glow-medallion: 0 0 36px rgba(232, 149, 30, 0.4);
+  --glow-ember: 0 0 8px rgba(232, 149, 30, 0.7);
+  --glow-gold-text: 0 0 18px rgba(246, 196, 83, 0.6);
+  --shadow-text-legible: 0 1px 6px rgba(0, 0, 0, 0.7);
+  --shadow-text-hero: 0 2px 14px rgba(0, 0, 0, 0.75), 0 0 22px rgba(232, 149, 30, 0.35);
+
+  /* focus */
+  --focus-ring: 0 0 0 3px rgba(232, 149, 30, 0.15);
+
+  /* overlays */
+  --veil-saga: linear-gradient(180deg, var(--bg) 0%, rgba(11, 8, 6, 0.78) 22%, rgba(11, 8, 6, 0.78) 78%, var(--bg) 100%);
+  --veil-hero: radial-gradient(120% 90% at 50% 90%, rgba(232, 149, 30, 0.2), transparent 55%),
+    linear-gradient(180deg, rgba(11, 8, 6, 0.66) 0%, rgba(11, 8, 6, 0.28) 36%, rgba(11, 8, 6, 0.5) 70%, var(--bg) 100%);
+  --vignette: radial-gradient(125% 100% at 50% 40%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.45) 100%);
+  --blur-nav: blur(12px);
+  --blur-lightbox: blur(6px);
+}

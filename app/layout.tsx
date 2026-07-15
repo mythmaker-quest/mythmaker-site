@@ -1,6 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { Cinzel, Alegreya, IM_Fell_English } from 'next/font/google';
+// Design-system tokens are the source of truth; the site's globals.css loads
+// after and overrides only the --font-* tokens to the next/font faces below.
+import '@mythmaker/ui/tokens/colors.css';
+import '@mythmaker/ui/tokens/typography.css';
+import '@mythmaker/ui/tokens/spacing.css';
+import '@mythmaker/ui/tokens/effects.css';
 import './globals.css';
 
 const knights = localFont({ src: './fonts/knights-quest.woff2', variable: '--font-knights', display: 'swap' });

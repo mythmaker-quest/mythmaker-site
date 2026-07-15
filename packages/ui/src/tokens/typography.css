@@ -1,0 +1,39 @@
+:root {
+  /* families — consumers may override --font-* (e.g. the Next site wires these
+     to next/font variables); literal families here are the standalone default */
+  --font-display: "Knights Quest", "Cinzel", serif;      /* all display headings, hero eyebrow, Sköl! */
+  --font-display-alt: "PR Viking", "Cinzel", serif;      /* retired alternate — runic caps */
+  --font-ui: "Cinzel", serif;                            /* eyebrows, nav, buttons, labels, chips, stats */
+  --font-body: "Alegreya", Georgia, serif;               /* paragraphs */
+  --font-quest: "IM Fell English", serif;                /* the Quest voice — italic pull-quotes, mystic lines */
+
+  /* display scale */
+  --text-h2: clamp(34px, 5vw, 52px);          /* section headings — Knights Quest 400 */
+  --text-h2-compact: clamp(30px, 4.4vw, 44px);
+  --text-hero-eyebrow: clamp(24px, 3vw, 33px); /* Knights Quest 400, title-case, ls .05em */
+  --text-quote: clamp(24px, 3.4vw, 32px);      /* IM Fell italic, lh 1.45 */
+  --text-pull: clamp(21px, 2.6vw, 26px);       /* IM Fell italic */
+  --text-stat: clamp(38px, 5vw, 50px);         /* Cinzel 700 */
+  --text-skol: 34px;                           /* Knights Quest accent word */
+
+  /* UI scale (Cinzel, uppercase, letter-spaced) */
+  --text-eyebrow: 11.5px;      /* ls .32em */
+  --text-nav: 11.5px;          /* ls .18em */
+  --text-button: 14px;         /* ls .12em, weight 600 */
+  --text-label: 12px;          /* stat labels, ls .22em */
+  --text-chip: 10.5px;         /* ls .12em */
+  --text-card-title: 19px;     /* Cinzel 600, gold */
+
+  /* body scale (Alegreya) */
+  --text-lead: 17.5px;         /* lh 1.68 */
+  --text-hero-lead: 19px;      /* lh 1.65 */
+  --text-card-body: 15.5px;    /* lh 1.55 */
+  --text-caption: 14px;        /* italic */
+
+  /* letter-spacing */
+  --ls-eyebrow: 0.32em;
+  --ls-nav: 0.18em;
+  --ls-button: 0.12em;
+  --ls-label: 0.22em;
+  --ls-display: 0.01em;
+}

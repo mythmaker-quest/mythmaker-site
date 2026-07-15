@@ -1,0 +1,34 @@
+/* MythMaker webfonts — display faces are client-supplied (licensed to MythMaker).
+   NOTE: the Next site does NOT import this file; it self-hosts these faces via
+   next/font and overrides the --font-* tokens. This @font-face set is for
+   standalone/Claude Design use, where the .ttf files sit at ../assets/fonts/. */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap");
+
+/* Primary display — blackletter. ALL display headings, hero eyebrow, one-word accents. */
+@font-face {
+  font-family: "Knights Quest";
+  src: url("../assets/fonts/Knights Quest.ttf") format("truetype");
+  font-display: swap;
+}
+/* Alternate display — runic caps. Client's original pick; retired from the site, kept as an alternate. */
+@font-face {
+  font-family: "PR Viking";
+  src: url("../assets/fonts/PR Viking.ttf") format("truetype");
+  font-display: swap;
+}
+/* Decorative extras — one-word moments only, never running text */
+@font-face {
+  font-family: "PR Viking Alternates"; /* pure runes (non-Latin glyphs) */
+  src: url("../assets/fonts/PR Viking Alternates.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Knights Quest Callig"; /* outlined blackletter */
+  src: url("../assets/fonts/Knights Quest Callig.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Knights Quest Shielded"; /* letters set in shield badges */
+  src: url("../assets/fonts/Knights Quest Shielded.ttf") format("truetype");
+  font-display: swap;
+}

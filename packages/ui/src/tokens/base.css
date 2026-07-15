@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+a { color: var(--link); text-decoration: none; transition: color var(--dur-hover) ease; }
+a:hover { color: var(--link-hover); }
+::selection { background: var(--selection-bg); color: var(--selection-text); }
+img { max-width: 100%; }
+h1, h2, h3 { margin: 0; }
+button { font-family: inherit; }

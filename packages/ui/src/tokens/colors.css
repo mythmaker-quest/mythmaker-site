@@ -1,0 +1,45 @@
+:root {
+  /* base surfaces — near-black warm browns, lit by firelight */
+  --bg: #0b0806;
+  --bg-alt: #0e0a07;
+  --bg-deep: #050403;
+  --surface: #14100b;
+  --surface-raised: rgba(20, 16, 11, 0.7);
+
+  /* text — warm parchment */
+  --text: #efe6d3;
+  --text-quest: #ece4d4;
+  --text-muted: rgba(239, 230, 211, 0.62);
+  --text-faint: rgba(239, 230, 211, 0.5);
+  --text-strong: rgba(239, 230, 211, 0.88);
+
+  /* golds & ambers — the fire */
+  --gold: #f6c453;
+  --gold-bright: #ffdf8a;
+  --amber: #e8951e;
+  --amber-hover: #f6b23a;
+  --eyebrow-lit: #f8cf63;
+  --on-amber: #1a0f05;
+  --bronze: #b08d57;
+
+  /* borders */
+  --border-gold: rgba(246, 196, 83, 0.16);
+  --border-gold-soft: rgba(246, 196, 83, 0.1);
+  --border-gold-strong: rgba(246, 196, 83, 0.55);
+  --border-parchment: rgba(239, 230, 211, 0.18);
+
+  /* semantic aliases */
+  --surface-card: var(--surface);
+  --text-body: var(--text);
+  --text-heading: var(--text);
+  --accent: var(--amber);
+  --accent-text: var(--gold);
+  --link: var(--gold);
+  --link-hover: var(--gold-bright);
+  --selection-bg: var(--amber);
+  --selection-text: #160f08;
+
+  /* ember particle hue range (canvas): hsl(22–48, 95%, 58–70%) */
+  --ember-hue-min: 22;
+  --ember-hue-max: 48;
+}

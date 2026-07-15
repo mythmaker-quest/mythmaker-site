@@ -2,12 +2,17 @@
   "name": "mythmaker-site",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:ui": "npm run build --workspace @mythmaker/ui"
   },
   "dependencies": {
+    "@mythmaker/ui": "*",
     "next": "^15.5.20",
     "nodemailer": "^9.0.3",
     "react": "19.0.0",

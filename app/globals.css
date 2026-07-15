@@ -12,6 +12,13 @@
   --eyebrow-lit: #f8cf63;
   --on-amber: #1a0f05;
   --border-gold: rgba(246, 196, 83, 0.16);
+
+  /* bridge @mythmaker/ui's semantic font tokens to the site's next/font faces
+     (the package ships literal family names as a standalone default) */
+  --font-display: var(--font-knights), var(--font-cinzel), serif;
+  --font-ui: var(--font-cinzel), serif;
+  --font-body: var(--font-alegreya), Georgia, serif;
+  --font-quest: var(--font-fell), serif;
 }
 
 /* fonts wired via next/font -> --font-knights (display headings), --font-viking (hero eyebrow),

@@ -6,3 +6,9 @@ next-env.d.ts
 .DS_Store
 *.log
 .env*.local
+
+# design-system build artifacts
+packages/*/dist
+# design-sync working dirs (config.json + NOTES.md are committed; these are not)
+.ds-sync
+ds-bundle

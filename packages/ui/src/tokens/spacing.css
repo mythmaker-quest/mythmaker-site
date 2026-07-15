@@ -1,0 +1,27 @@
+:root {
+  /* section rhythm */
+  --section-pad-y: 96px;
+  --section-pad-y-end: 84px;
+  --section-pad-x: 24px;
+  --section-max: 1180px;
+  --section-max-wide: 1200px;
+  --section-max-narrow: 640px;
+  --scroll-offset: 70px;   /* fixed-nav scroll-margin-top on every anchor target */
+
+  /* grids */
+  --grid-gap: 18px;
+  --card-min: 300px;       /* show cards */
+  --card-min-sm: 255px;    /* workshop cards */
+  --masonry-col: 250px;    /* gallery: columns 3 250px */
+  --masonry-gap: 14px;
+
+  /* component padding */
+  --btn-pad: 15px 28px;
+  --btn-pad-sm: 9px 18px;
+  --card-body-pad: 18px 20px 22px;
+  --input-pad: 13px 15px;
+  --chip-pad: 8px 15px;
+
+  /* breakpoint (single hard break: nav collapse + rail hide) */
+  --bp-mobile: 820px;
+}

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState, useActionState } from 'react';
+import { Marquee, Stat } from '@mythmaker/ui';
 import dims from './photo-dims.json';
 import { sendBooking } from './actions';
 
@@ -73,26 +74,7 @@ export default function Page() {
       cleanups.push(() => io.disconnect());
     }
 
-    // count-up
-    const nums = Array.from(document.querySelectorAll<HTMLElement>('[data-target]'));
-    if (!reduce) {
-      const cio = new IntersectionObserver((es) => es.forEach((e) => {
-        if (!e.isIntersecting) return;
-        cio.unobserve(e.target);
-        const el = e.target as HTMLElement;
-        const target = Number(el.dataset.target);
-        const t0 = performance.now(), dur = 1600;
-        const tick = (now: number) => {
-          const p = Math.min(1, (now - t0) / dur);
-          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        el.textContent = '0';
-        requestAnimationFrame(tick);
-      }), { threshold: 0.5 });
-      nums.forEach((el) => cio.observe(el));
-      cleanups.push(() => cio.disconnect());
-    }
+    // (stat count-up now lives in the @mythmaker/ui <Stat> component)
 
     // embers
     const cv = embersRef.current, hero = heroRef.current;
@@ -276,16 +258,8 @@ export default function Page() {
         <div className="scroll-cue">The saga unfolds<div className="chev">▾</div></div>
       </section>
 
-      <section className="proof" aria-label="Festivals played">
-        <div className="proof-track">
-          {[0, 1].map((k) => (
-            <span key={k} style={{ display: 'inline-flex' }}>
-              {FESTIVALS.map((f, i) => (
-                <span key={f + i}>{f}<i className="proof-diamond" style={{ marginLeft: 26 }} aria-hidden /></span>
-              ))}
-            </span>
-          ))}
-        </div>
+      <section aria-label="Festivals played">
+        <Marquee items={FESTIVALS} />
       </section>
 
       <section id="show" className="section">
@@ -320,11 +294,8 @@ export default function Page() {
           <h2 className="h2">Forged in fire at Black Rock City</h2>
           <p className="lead" style={{ margin: '18px auto 0', maxWidth: 700, color: 'rgba(239,230,211,.82)' }}>For fifteen years MythMaker raised a Viking city at Burning Man — a hundred warriors strong, with a flaming dragon-ship stage, a stocked mead hall and a Temple to the Goddess. The Quest was born around those fires. The camp is legend now; the fire it forged travels the world.</p>
           <div className="stats">
-            {STATS.map(([target, shown, label]) => (
-              <div key={label}>
-                <div className="stat-num" data-target={target}>{shown}</div>
-                <div className="stat-label">{label}</div>
-              </div>
+            {STATS.map(([target, , label]) => (
+              <Stat key={label} value={target} label={label} />
             ))}
           </div>
         </div>
