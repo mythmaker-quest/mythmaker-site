@@ -305,7 +305,7 @@ export default function Page() {
       <section id="quest" className="quest">
         <div className="reveal" style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
           <Image src="/photos/IMG_1190.jpg" alt="The white antlered wolf of the Quest, howling" {...dim('IMG_1190.jpg')} className="quest-wolf" sizes="(max-width:820px) 86vw, 560px" />
-          <div className="eyebrow" style={{ color: 'var(--gold)', textShadow: '0 0 22px rgba(246,196,83,.8), 0 0 8px rgba(246,196,83,.6), var(--shadow-text-legible)' }}>The Quest</div>
+          <div className="eyebrow" style={{ color: '#ffc61c', textShadow: '0 0 6px rgba(255,236,150,.95), 0 0 18px rgba(255,198,28,.9), 0 0 38px rgba(255,198,28,.6), 0 1px 6px rgba(0,0,0,.75)' }}>The Quest</div>
           <h2 className="quest-quote">“The veil is thin. The magic is real, and the threshold is directly in front of you.”</h2>
           <p className="quest-lead">Beyond the fire lies a hidden world. A deck of cards you hold in your hands. A scrying scroll that reads marks others cannot see. Seven keys, seven shards, and a white antlered wolf waiting at the edge of the forest.</p>
           <div className="quest-cards">
