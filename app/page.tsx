@@ -176,7 +176,7 @@ export default function Page() {
       <nav className="nav">
         <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <Image src="/brand/wolf-medallion.png" alt="MythMaker medallion" width={36} height={36} style={{ borderRadius: '50%' }} />
-          <Image src="/brand/logo-wordmark.png" alt="MythMaker" width={91} height={30} style={{ height: 19, width: 'auto' }} />
+          <Image src="/brand/logo-wordmark.png" alt="MythMaker" width={91} height={30} style={{ height: 30, width: 'auto' }} />
         </a>
         <div style={{ flex: 1 }} />
         <div className="nav-links">
@@ -393,7 +393,7 @@ export default function Page() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <Image src="/brand/wolf-medallion.png" alt="" width={44} height={44} style={{ borderRadius: '50%' }} />
             <div>
-              <Image src="/brand/logo-wordmark.png" alt="MythMaker" width={76} height={25} style={{ height: 15, width: 'auto' }} />
+              <Image src="/brand/logo-wordmark.png" alt="MythMaker" width={91} height={30} style={{ height: 30, width: 'auto' }} />
               <div style={{ marginTop: 6, fontSize: 13.5, color: 'rgba(239,230,211,.5)' }}>© MythMaker · British Columbia, Canada</div>
             </div>
           </div>
