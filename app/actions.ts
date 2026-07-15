@@ -36,7 +36,7 @@ export async function sendBooking(_prev: BookingState, formData: FormData): Prom
       from: process.env.BOOKING_FROM || 'MythMaker Site <noreply@novadiem.com>',
       to: process.env.BOOKING_TO || 'mythmakerburn@gmail.com',
       replyTo: `${name} <${email}>`,
-      subject: `Booking enquiry — ${name}${type ? ` · ${type}` : ''}`,
+      subject: `Booking enquiry: ${name}${type ? ` · ${type}` : ''}`,
       text: [
         'A new enquiry came in through the MythMaker site.',
         '',

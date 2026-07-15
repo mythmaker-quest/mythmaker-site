@@ -21,17 +21,17 @@ const RAIL: [string, string][] = [
 const FESTIVALS = ['Burning Man', 'Shambhala', 'Faerieworlds', 'Earthdance', 'Vancouver Island MusicFest', 'Starbelly Jam'];
 const SHOW = [
   { img: 'IMG_6868.jpg', t: 'Fire performance', d: 'Poi, staff, sword and choreographed flame. The signature that made the name.', pos: 'center' },
-  { img: 'IMG_4445.jpg', t: 'Circus & aerial', d: 'Acrobats, jugglers, contortion: sacred circus extravaganzas of flight and flame.', pos: 'center' },
+  { img: 'IMG_4445.jpg', t: 'Circus & aerial', d: 'Acrobats, jugglers and contortionists: sacred circus of flight and flame.', pos: 'center' },
   { img: 'IMG_1698.jpg', t: 'Stilts & creatures', d: 'Costumed giants and archetypal masks walking among your crowd.', pos: 'center 34%' },
   { img: 'IMG_0553.jpg', t: 'Epic swordplay', d: 'Choreographed steel for stage and screen. Performance and workshops.', pos: 'center' },
   { img: 'IMG_2487.jpg', t: 'Ceremony & ritual', d: 'Openings, finales and weddings. Moments made sacred by fire and story.', pos: 'center' },
   { img: 'IMG_1356.jpg', t: 'Music & parade', d: 'Theatrical music, thunderous drums and award-winning parade processions.', pos: 'center 22%' },
 ];
 const WORKSHOPS = [
-  { img: 'IMG_1424.jpg', t: 'Retreats & rites of passage', d: 'Men’s Mysteries, Rites of Passage and Youth Coming-of-Age — ceremonial journeys into healthy masculinity, initiation and belonging.' },
-  { img: 'IMG_7420.jpg', t: 'For builders of community', d: 'The Intentional Community Blueprint and hands-on consulting for co-ops and collectives — thirty years of what makes a community last.' },
-  { img: 'IMG_6877.jpg', t: 'For makers of experience', d: 'Designing the Immersive World — a masterclass on ritual, immersion and the craft of a life-altering event.' },
-  { img: 'IMG_0618.jpg', t: 'The old ways', d: 'Sword, fire, mask, story and Nordic/Celtic rite — taught hand to hand.' },
+  { img: 'IMG_1424.jpg', t: 'Retreats & rites of passage', d: 'Men’s Mysteries, Rites of Passage and Youth Coming-of-Age: ceremonial journeys into healthy masculinity, initiation and belonging.' },
+  { img: 'IMG_7420.jpg', t: 'For builders of community', d: 'The Intentional Community Blueprint and hands-on consulting for co-ops and collectives. Thirty years of what makes a community last.' },
+  { img: 'IMG_6877.jpg', t: 'For makers of experience', d: 'Designing the Immersive World: a masterclass on ritual, immersion and the craft of an event no one forgets.' },
+  { img: 'IMG_0618.jpg', t: 'The old ways', d: 'Sword, fire, mask, story and Nordic/Celtic rite, taught hand to hand.' },
 ];
 const GALLERY: [string, string][] = [
   ['IMG_4439.jpg', 'A hooded fire priestess raises two blazing pentagram wheels'],
@@ -249,7 +249,7 @@ export default function Page() {
             <Image src="/brand/logo-wordmark.png" alt="MYTHMAKER" width={548} height={180} priority className="hero-wordmark" />
           </div>
           <div className="hero-tagline">Fire · Myth · Ceremony</div>
-          <p className="hero-lead">A professional company of fire artists, storytellers and myth-builders from the mountains of British Columbia — summoning living mythology to festivals, weddings and gatherings across the world.</p>
+          <p className="hero-lead">A professional company of fire artists, storytellers and myth-builders from the mountains of British Columbia, summoning living mythology to festivals, weddings and gatherings across the world.</p>
           <div className="hero-ctas">
             <a href="#book" className="btn btn-primary">Book a performance</a>
             <a href="#quest" className="btn btn-ghost">Explore the Quest</a>
@@ -266,7 +266,7 @@ export default function Page() {
         <div className="reveal center" style={{ maxWidth: 720, margin: '0 auto 46px' }}>
           <div className="eyebrow">The Show</div>
           <h2 className="h2">Twelve ancient arts. One fire.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Every act scales — from a lone fire dancer at an intimate ceremony to a fifty-person spectacle on a festival main stage. Tailored to your theme, staged to professional fire-safety standards.</p>
+          <p className="lead" style={{ marginTop: 16 }}>Every act scales, from a lone fire dancer at an intimate ceremony to a fifty-person spectacle on a festival main stage. Tailored to your theme, staged to professional fire-safety standards.</p>
         </div>
         <div className="reveal grid">
           {SHOW.map((c) => (
@@ -292,7 +292,7 @@ export default function Page() {
         <div className="reveal center" style={{ position: 'relative', maxWidth: 880, margin: '0 auto' }}>
           <div className="eyebrow">The Saga</div>
           <h2 className="h2">Forged in fire at Black Rock City</h2>
-          <p className="lead" style={{ margin: '18px auto 0', maxWidth: 700, color: 'rgba(239,230,211,.82)' }}>For fifteen years MythMaker raised a Viking city at Burning Man — a hundred warriors strong, with a flaming dragon-ship stage, a stocked mead hall and a Temple to the Goddess. The Quest was born around those fires. The camp is legend now; the fire it forged travels the world.</p>
+          <p className="lead" style={{ margin: '18px auto 0', maxWidth: 700, color: 'rgba(239,230,211,.82)' }}>For fifteen years MythMaker raised a Viking city at Burning Man, a hundred warriors strong, with a flaming dragon-ship stage, a stocked mead hall and a Temple to the Goddess. The Quest was born around those fires. The camp is legend now; the fire it forged travels the world.</p>
           <div className="stats">
             {STATS.map(([target, , label]) => (
               <Stat key={label} value={target} label={label} />
@@ -305,20 +305,20 @@ export default function Page() {
         <div className="reveal" style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
           <Image src="/photos/IMG_1190.jpg" alt="The white antlered wolf of the Quest, howling" {...dim('IMG_1190.jpg')} className="quest-wolf" sizes="(max-width:820px) 86vw, 560px" />
           <div className="eyebrow" style={{ color: '#b08d57' }}>The Quest</div>
-          <h2 className="quest-quote">“The veil is thin. The magic is real — and the threshold is directly in front of you.”</h2>
-          <p className="quest-lead">Beyond the fire lies a hidden world. A deck of cards you hold in your hands. A scrying scroll that reads marks others cannot see. Seven keys, seven shards — and a white antlered wolf waiting at the edge of the forest.</p>
+          <h2 className="quest-quote">“The veil is thin. The magic is real, and the threshold is directly in front of you.”</h2>
+          <p className="quest-lead">Beyond the fire lies a hidden world. A deck of cards you hold in your hands. A scrying scroll that reads marks others cannot see. Seven keys, seven shards, and a white antlered wolf waiting at the edge of the forest.</p>
           <div className="quest-cards">
             <div className="tilt" onPointerMove={tiltMove} onPointerLeave={tiltLeave}>
-              <div className="tilt-inner"><Image src="/brand/questcard-wrens-ritual.png" alt="Quest card — Wren’s Ritual" width={240} height={336} /></div>
+              <div className="tilt-inner"><Image src="/brand/questcard-wrens-ritual.png" alt="Quest card: Wren’s Ritual" width={240} height={336} /></div>
             </div>
             <div className="tilt" onPointerMove={tiltMove} onPointerLeave={tiltLeave} style={{ marginTop: 26 }}>
-              <div className="tilt-inner"><Image src="/brand/questcard-the-magician.png" alt="Quest card — The Magician" width={219} height={379} /></div>
+              <div className="tilt-inner"><Image src="/brand/questcard-the-magician.png" alt="Quest card: The Magician" width={219} height={379} /></div>
             </div>
           </div>
-          <p style={{ margin: '8px auto 30px', maxWidth: 480, fontFamily: 'var(--font-fell), serif', fontStyle: 'italic', fontSize: 14.5, color: 'rgba(236,228,212,.45)' }}>A real-world quest in the making — the deck is drawn, the scroll is being written.</p>
+          <p style={{ margin: '8px auto 30px', maxWidth: 480, fontFamily: 'var(--font-fell), serif', fontStyle: 'italic', fontSize: 14.5, color: 'rgba(236,228,212,.45)' }}>A real-world quest in the making. The deck is drawn, the scroll is being written.</p>
           <a href="https://thequest.mythmaker.ca" target="_blank" rel="noopener" className="btn btn-ghost" style={{ color: 'var(--gold)', borderColor: 'rgba(246,196,83,.55)', fontSize: 15 }}>Will you wake, seeker?</a>
           <div style={{ marginTop: 18 }}>
-            <a href="https://www.youtube.com/watch?v=VGu-MN-Ux2w" target="_blank" rel="noopener" style={{ fontFamily: 'var(--font-fell), serif', fontStyle: 'italic', fontSize: 15, color: 'rgba(236,228,212,.6)' }}>Watch the opening rite — “The Wolf and the Key” ↗</a>
+            <a href="https://www.youtube.com/watch?v=VGu-MN-Ux2w" target="_blank" rel="noopener" style={{ fontFamily: 'var(--font-fell), serif', fontStyle: 'italic', fontSize: 15, color: 'rgba(236,228,212,.6)' }}>Watch the opening rite:“The Wolf and the Key” ↗</a>
           </div>
         </div>
       </section>
@@ -327,7 +327,7 @@ export default function Page() {
         <div className="reveal center" style={{ maxWidth: 700, margin: '0 auto 42px' }}>
           <div className="eyebrow">The Gallery</div>
           <h2 className="h2">From the road</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Fifteen seasons of fire, feathers, steel and stilts — a glimpse of the archive.</p>
+          <p className="lead" style={{ marginTop: 16 }}>Fifteen seasons of fire, feathers, steel and stilts. A glimpse of the archive.</p>
         </div>
         <div className="reveal masonry">
           {GALLERY.map(([n, alt], i) => (
@@ -347,7 +347,7 @@ export default function Page() {
             <div className="eyebrow">The Company</div>
             <h2 className="h2" style={{ fontSize: 'clamp(30px,4.4vw,44px)' }}>Guided by the swordmaster</h2>
             <p style={{ margin: '18px 0 0', fontSize: 17, lineHeight: 1.7, color: 'rgba(239,230,211,.8)' }}><strong style={{ color: 'var(--gold)', fontWeight: 700 }}>Hjeron O’Sidhe</strong>, director, swordmaster and storyteller, has helmed MythMaker for over two decades: thirty-three original productions written, directed and scored, and over two decades spent touring them across the world. His craft is rooted in thirty years steeped in Celtic and world storytelling, ancestral ritual and the art of the blade.</p>
-            <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.7, color: 'rgba(239,230,211,.8)' }}>Around him stands a seasoned collective of professional fire artists, acrobats, stilt-walkers, musicians and makers — a company with the depth to bring the right artists to your event, from an intimate ceremony to a festival main stage.</p>
+            <p style={{ margin: '14px 0 0', fontSize: 17, lineHeight: 1.7, color: 'rgba(239,230,211,.8)' }}>Around him stands a seasoned collective of professional fire artists, acrobats, stilt-walkers, musicians and makers, with the depth to bring the right artists to your event, from an intimate ceremony to a festival main stage.</p>
             <div className="chips">
               <span className="chip">Professional fire-safety standards</span>
               <span className="chip">Tailored to your theme</span>
@@ -356,7 +356,7 @@ export default function Page() {
           </div>
           <figure className="reveal">
             <Image src="/photos/IMG_2536.jpg" alt="Hjeron O’Sidhe, antlered and fur-clad, drumming and chanting into the mic" {...dim('IMG_2536.jpg')} sizes="(max-width:820px) 100vw, 540px" />
-            <figcaption>Hjeron O’Sidhe — founder, director &amp; swordmaster</figcaption>
+            <figcaption>Hjeron O’Sidhe · founder, director &amp; swordmaster</figcaption>
           </figure>
         </div>
       </section>
@@ -365,7 +365,7 @@ export default function Page() {
         <div className="reveal center" style={{ maxWidth: 760, margin: '0 auto 46px' }}>
           <div className="eyebrow">Workshops &amp; Retreats</div>
           <h2 className="h2">Study with Hjeron</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Behind the fire shows is thirty years of the real thing — ceremony, community and ancestral craft. Where the Show is spectacle and the Quest is story, this is the practice: the work you do in your own body and life.</p>
+          <p className="lead" style={{ marginTop: 16 }}>Behind the fire shows is thirty years of the real thing: ceremony, community and ancestral craft. Where the Show is spectacle and the Quest is story, this is the practice. The work you do in your own body and life.</p>
         </div>
         <div className="reveal grid grid-4">
           {WORKSHOPS.map((c) => (
@@ -379,7 +379,7 @@ export default function Page() {
         </div>
         <p className="reveal pull">“The old ways were never lost. They were waiting for you to ask.”</p>
         <div className="reveal center" style={{ marginTop: 34 }}>
-          <p style={{ margin: '0 0 22px', fontStyle: 'italic', fontSize: 16, color: 'rgba(239,230,211,.6)' }}>Retreats run on their own calendar — dates and places by enquiry.</p>
+          <p style={{ margin: '0 0 22px', fontStyle: 'italic', fontSize: 16, color: 'rgba(239,230,211,.6)' }}>Retreats run on their own calendar. Dates and places by enquiry.</p>
           <a href="mailto:hjeron@mythmaker.ca" className="btn btn-ghost" style={{ color: 'var(--gold)', borderColor: 'rgba(246,196,83,.55)' }}>Work with Hjeron</a>
         </div>
       </section>
@@ -389,7 +389,7 @@ export default function Page() {
           <div className="reveal">
             <div className="eyebrow">Book the fire</div>
             <h2 className="h2">Bring the myth to your event</h2>
-            <p className="lead" style={{ margin: '16px auto 34px' }}>Festivals, weddings, corporate gatherings, parades and schools. Tell us your vision — we answer within two days.</p>
+            <p className="lead" style={{ margin: '16px auto 34px' }}>Festivals, weddings, corporate gatherings, parades and schools. Tell us your vision, and we answer within two days.</p>
           </div>
           {bookState?.ok ? (
             <div className="book-success reveal shown">
@@ -414,13 +414,13 @@ export default function Page() {
                 </select>
                 <input type="text" name="date" placeholder="When (roughly)?" />
               </div>
-              <textarea name="vision" rows={4} placeholder="Tell us about your event — where, how big, how wild" />
+              <textarea name="vision" rows={4} placeholder="Tell us about your event: where, how big, how wild" />
               <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
               {bookState?.error && <p style={{ margin: 0, color: '#f6b23a', fontSize: 14 }}>{bookState.error}</p>}
               <button type="submit" className="btn btn-primary" disabled={bookPending}>{bookPending ? 'Sending…' : 'Request a quote'}</button>
             </form>
           )}
-          <p style={{ margin: '18px 0 0', fontSize: 15, color: 'rgba(239,230,211,.55)' }}>Or write the hall directly — <a href="mailto:mythmakerburn@gmail.com">mythmakerburn@gmail.com</a></p>
+          <p style={{ margin: '18px 0 0', fontSize: 15, color: 'rgba(239,230,211,.55)' }}>Or write the hall directly at <a href="mailto:mythmakerburn@gmail.com">mythmakerburn@gmail.com</a></p>
         </div>
       </section>
 

@@ -16,11 +16,11 @@ const fell = IM_Fell_English({ subsets: ['latin'], weight: '400', style: ['norma
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mythmaker-site.vercel.app'),
-  title: 'MythMaker — Fire, Myth & Ceremony',
+  title: 'MythMaker: Fire, Myth & Ceremony',
   description:
     'A professional company of fire artists, storytellers and myth-builders from British Columbia. Book the show, explore The Quest, or study with Hjeron.',
   openGraph: {
-    title: 'MythMaker — Fire, Myth & Ceremony',
+    title: 'MythMaker: Fire, Myth & Ceremony',
     description: 'Fire performance, the transmedia Quest, and workshops & retreats with Hjeron O’Sidhe.',
     images: ['/brand/poster-ouroboros.jpg'],
     type: 'website',
