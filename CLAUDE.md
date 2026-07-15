@@ -8,10 +8,18 @@ Commercial job: convert bookings.
 
 ## Source of truth
 
-**This repo is the source of truth.** The site was born in Claude Design and
-then rebuilt by hand as a Next.js app. Do not go back to Claude Design to edit
-content or design — change the code here and push. The Claude Design file is
-frozen reference, not a live upstream.
+**This repo is the source of truth for what ships.** The live site builds and
+deploys from here, so anything going to production lands in this code.
+
+Claude Design is *not* retired, though. It's still the better surface for
+**composing** certain things — laying out a section, assembling pieces, seeing
+a design whole before it's code. When something is built there, it doesn't flow
+back automatically: pull it across with DesignSync (`get_file` on the project
+below) and port it into the repo, then deploy. Compose in Claude Design where
+that's the better tool; ship from here.
+
+Claude Design project `01cb940a-fcfa-44a2-b0c9-d716eb3b72b0`, file
+`Mythmaker Home.dc.html` (needs `/design-login`).
 
 ## Stack
 
