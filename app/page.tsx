@@ -28,10 +28,10 @@ const SHOW = [
   { img: 'IMG_1356.jpg', t: 'Music & parade', d: 'Theatrical music, thunderous drums and award-winning parade processions.', pos: 'center 22%' },
 ];
 const WORKSHOPS = [
-  { img: 'IMG_1424.jpg', t: 'Retreats & rites of passage', d: 'Men’s Mysteries, Rites of Passage and Youth Coming-of-Age: ceremonial journeys into healthy masculinity, initiation and belonging.' },
-  { img: 'IMG_7420.jpg', t: 'For builders of community', d: 'The Intentional Community Blueprint and hands-on consulting for co-ops and collectives. Thirty years of what makes a community last.' },
-  { img: 'IMG_6877.jpg', t: 'For makers of experience', d: 'Designing the Immersive World: a masterclass on ritual, immersion and the craft of an event no one forgets.' },
-  { img: 'IMG_0618.jpg', t: 'The old ways', d: 'Sword, fire, mask, story and Nordic/Celtic rite, taught hand to hand.' },
+  { img: 'IMG_1424.jpg', t: 'Retreats & rites of passage', d: 'Men’s Mysteries, Rites of Passage and Youth Coming-of-Age: ceremonial journeys into healthy masculinity, initiation and belonging.', pos: 'center' },
+  { img: 'IMG_7420.jpg', t: 'For builders of community', d: 'The Intentional Community Blueprint and hands-on consulting for co-ops and collectives. Thirty years of what makes a community last.', pos: 'center 30%' },
+  { img: 'IMG_6877.jpg', t: 'For makers of experience', d: 'Designing the Immersive World: a masterclass on ritual, immersion and the craft of an event no one forgets.', pos: 'center' },
+  { img: 'IMG_0618.jpg', t: 'The old ways', d: 'Sword, fire, mask, story and Nordic/Celtic rite, taught hand to hand.', pos: 'center' },
 ];
 const GALLERY: [string, string][] = [
   ['IMG_4439.jpg', 'A hooded fire priestess raises two blazing pentagram wheels'],
@@ -371,7 +371,7 @@ export default function Page() {
           {WORKSHOPS.map((c) => (
             <div className="card" key={c.img}>
               <div className="card-img" style={{ height: 210 }}>
-                <Image src={`/photos/${c.img}`} alt={c.t} fill sizes="(max-width:820px) 100vw, 280px" style={{ objectFit: 'cover' }} />
+                <Image src={`/photos/${c.img}`} alt={c.t} fill sizes="(max-width:820px) 100vw, 280px" style={{ objectFit: 'cover', objectPosition: c.pos }} />
               </div>
               <div className="card-body"><h3>{c.t}</h3><p>{c.d}</p></div>
             </div>
