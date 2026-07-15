@@ -17,7 +17,7 @@
   --text-skol: 34px;                           /* Knights Quest accent word */
 
   /* UI scale (Cinzel, uppercase, letter-spaced) */
-  --text-eyebrow: 13.5px;      /* ls .32em */
+  --text-eyebrow: 15px;        /* ls .32em */
   --text-nav: 11.5px;          /* ls .18em */
   --text-button: 14px;         /* ls .12em, weight 600 */
   --text-label: 12px;          /* stat labels, ls .22em */
