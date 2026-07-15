@@ -11,6 +11,8 @@
     "src",
     "dist"
   ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -24,7 +26,7 @@
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && node scripts/bundle-css.mjs",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

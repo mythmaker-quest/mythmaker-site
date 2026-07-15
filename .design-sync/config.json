@@ -1,0 +1,8 @@
+{
+  "pkg": "@mythmaker/ui",
+  "globalName": "MythmakerUI",
+  "projectId": "be05ec27-45c9-4cde-b24b-6616c63508e0",
+  "shape": "package",
+  "buildCmd": "npm run build --workspace @mythmaker/ui",
+  "cssEntry": "dist/styles.css"
+}
