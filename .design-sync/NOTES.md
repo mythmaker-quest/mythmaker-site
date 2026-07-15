@@ -49,7 +49,6 @@ Design project `be05ec27-45c9-4cde-b24b-6616c63508e0`.
 - **All 15 components ship floor cards.** No authored previews yet
   (`.design-sync/previews/` is empty). Authoring rich previews is the standing
   incremental follow-up — needs playwright for grading.
-- **No `conventions.md` yet.** The design-agent conventions header
-  (`readmeHeader`) hasn't been authored — a follow-up that improves how the
-  design agent builds with the DS. The generated README carries the token/usage
-  basics in the meantime.
+- **`conventions.md` is authored** (`readmeHeader` → `.design-sync/conventions.md`),
+  prepended to the DS README. Re-syncs validate its token/component names against
+  the fresh build — if a name stops resolving, fix the header (don't rewrite it).
