@@ -303,6 +303,7 @@ export default function Page() {
 
       <section id="quest" className="quest">
         <div className="reveal" style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
+          <div className="quest-sep" aria-hidden><i /></div>
           <Image src="/photos/IMG_1190.jpg" alt="The white antlered wolf of the Quest, howling" {...dim('IMG_1190.jpg')} className="quest-wolf" sizes="(max-width:820px) 86vw, 560px" />
           <div className="eyebrow" style={{ color: 'var(--bronze)' }}>The Quest</div>
           <h2 className="quest-quote">“The veil is thin. The magic is real, and the threshold is directly in front of you.”</h2>

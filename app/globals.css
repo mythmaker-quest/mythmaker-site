@@ -160,6 +160,12 @@ button { font-family: inherit; }
 /* ---- quest ---- */
 .quest { position: relative; background: var(--bg-deep); padding: 64px 24px 130px; overflow: hidden;
   text-align: center; scroll-margin-top: 70px; }
+.quest-sep { display: flex; align-items: center; justify-content: center; max-width: 300px; margin: 0 auto 46px; }
+.quest-sep::before, .quest-sep::after { content: ''; height: 1px; flex: 1; }
+.quest-sep::before { background: linear-gradient(90deg, transparent, rgba(246, 196, 83, 0.5)); }
+.quest-sep::after { background: linear-gradient(270deg, transparent, rgba(246, 196, 83, 0.5)); }
+.quest-sep i { width: 8px; height: 8px; margin: 0 16px; flex: none; transform: rotate(45deg);
+  background: var(--amber); box-shadow: var(--glow-ember); }
 .quest-wolf { width: min(560px, 86vw); margin: 0 auto -14px; display: block; height: auto;
   -webkit-mask-image: radial-gradient(58% 70% at 50% 50%, #000 55%, transparent 78%);
   mask-image: radial-gradient(58% 70% at 50% 50%, #000 55%, transparent 78%); }
