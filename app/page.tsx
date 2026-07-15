@@ -414,7 +414,8 @@ export default function Page() {
 
       {lb >= 0 && (
         <div className="lightbox" onClick={() => setLb(-1)} role="dialog" aria-modal="true">
-          <Image src={`/photos/${GALLERY[lb][0]}`} alt={GALLERY[lb][1]} {...dim(GALLERY[lb][0])} sizes="90vw" onClick={(e) => e.stopPropagation()} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`/photos/${GALLERY[lb][0]}`} alt={GALLERY[lb][1]} onClick={(e) => e.stopPropagation()} />
           <button className="lb-btn lb-close" onClick={() => setLb(-1)} aria-label="Close">✕</button>
           <button className="lb-btn lb-prev" onClick={(e) => { e.stopPropagation(); setLb((i) => (i - 1 + GALLERY.length) % GALLERY.length); }} aria-label="Previous">‹</button>
           <button className="lb-btn lb-next" onClick={(e) => { e.stopPropagation(); setLb((i) => (i + 1) % GALLERY.length); }} aria-label="Next">›</button>
