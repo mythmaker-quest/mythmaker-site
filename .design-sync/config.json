@@ -9,5 +9,9 @@
   "overrides": {
     "Heading": { "cardMode": "column" },
     "SectionIntro": { "cardMode": "column" }
+  },
+  "componentSrcMap": {
+    "TextArea": "src/components/forms/Field.tsx",
+    "SelectField": "src/components/forms/Field.tsx"
   }
 }

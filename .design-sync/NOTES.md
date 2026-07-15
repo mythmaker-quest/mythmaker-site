@@ -25,11 +25,10 @@ Design project `be05ec27-45c9-4cde-b24b-6616c63508e0`.
   converter copies it into the bundle's `fonts/` and rewrites the url. Google
   faces (Cinzel/Alegreya/IM Fell) load via a remote `@import` → `[FONT_REMOTE]`,
   expected, no action.
-- **`TextArea` / `SelectField` land under group `general`.** They're exported
-  from `Field.tsx` (group `forms`), but the converter maps each export to its own
-  source file and can't find `TextArea.tsx`/`SelectField.tsx`. Cosmetic (DS-pane
-  grouping only). To move them under `forms`, add
-  `componentSrcMap: {"TextArea": "src/components/forms/Field.tsx", "SelectField": "src/components/forms/Field.tsx"}`.
+- **`TextArea` / `SelectField` are pinned to `forms`** via `cfg.componentSrcMap`
+  (both → `src/components/forms/Field.tsx`). Without it the converter can't map
+  these Field.tsx co-exports to a source file and drops them into group `general`.
+  Keep the pins; if Field.tsx moves, update the paths.
 
 ## Known render warns
 
