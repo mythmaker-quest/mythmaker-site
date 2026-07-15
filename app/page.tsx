@@ -13,6 +13,10 @@ const NAV: [string, string][] = [
   ['#show', 'The Show'], ['#saga', 'The Saga'], ['#quest', 'The Quest'],
   ['#gallery', 'Gallery'], ['#company', 'Company'], ['#workshops', 'Workshops'],
 ];
+const RAIL: [string, string][] = [
+  ['show', 'Show'], ['saga', 'Saga'], ['quest', 'Quest'], ['gallery', 'Gallery'],
+  ['company', 'Company'], ['workshops', 'Workshops'], ['book', 'Book'],
+];
 const FESTIVALS = ['Burning Man', 'Shambhala', 'Faerieworlds', 'Earthdance', 'Vancouver Island MusicFest', 'Starbelly Jam'];
 const SHOW = [
   { img: 'IMG_6868.jpg', t: 'Fire performance', d: 'Poi, staff, sword and choreographed flame. The signature that made the name.', pos: 'center' },
@@ -141,6 +145,56 @@ export default function Page() {
       cleanups.push(() => { cancelAnimationFrame(raf); removeEventListener('resize', onResize); hero.removeEventListener('pointermove', onMove); hero.removeEventListener('pointerleave', onLeave); vio.disconnect(); });
     }
 
+    // saga parallax
+    const sagaWrap = document.querySelector<HTMLElement>('.saga-bg-wrap');
+    if (sagaWrap && !reduce) {
+      let sraf = 0;
+      const onScroll = () => {
+        cancelAnimationFrame(sraf);
+        sraf = requestAnimationFrame(() => {
+          const saga = sagaWrap.closest('section');
+          if (!saga) return;
+          const r = saga.getBoundingClientRect();
+          const offset = r.top + r.height / 2 - window.innerHeight / 2;
+          sagaWrap.style.transform = `translate3d(0, ${(-offset * 0.05).toFixed(1)}px, 0)`;
+        });
+      };
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      cleanups.push(() => { cancelAnimationFrame(sraf); removeEventListener('scroll', onScroll); });
+    }
+
+    // chapter rail — highlight the active section
+    const railLinks = Array.from(document.querySelectorAll<HTMLElement>('.chapter-rail a'));
+    if (railLinks.length) {
+      const rio = new IntersectionObserver((es) => es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const id = (e.target as HTMLElement).id;
+        railLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+      }), { rootMargin: '-45% 0px -45%' });
+      document.querySelectorAll<HTMLElement>('section[id]').forEach((s) => rio.observe(s));
+      cleanups.push(() => rio.disconnect());
+    }
+
+    // magnetic primary CTAs (fine-pointer only)
+    if (window.matchMedia('(hover:hover) and (pointer:fine)').matches && !reduce) {
+      const mags = Array.from(document.querySelectorAll<HTMLElement>('.btn-primary'));
+      const handlers: Array<[HTMLElement, (e: PointerEvent) => void, () => void]> = [];
+      mags.forEach((btn) => {
+        const move = (e: PointerEvent) => {
+          const r = btn.getBoundingClientRect();
+          const x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height / 2);
+          btn.style.transition = 'transform .1s ease';
+          btn.style.transform = `translate(${(x * 0.22).toFixed(1)}px, ${(y * 0.32).toFixed(1)}px)`;
+        };
+        const leave = () => { btn.style.transition = 'transform .45s cubic-bezier(.2,.8,.2,1)'; btn.style.transform = ''; };
+        btn.addEventListener('pointermove', move);
+        btn.addEventListener('pointerleave', leave);
+        handlers.push([btn, move, leave]);
+      });
+      cleanups.push(() => handlers.forEach(([b, m, l]) => { b.removeEventListener('pointermove', m); b.removeEventListener('pointerleave', l); }));
+    }
+
     return () => cleanups.forEach((c) => c());
   }, []);
 
@@ -172,6 +226,15 @@ export default function Page() {
   return (
     <>
       <div className="grain" aria-hidden />
+      <div className="grain-noise" aria-hidden />
+      <nav className="chapter-rail" aria-hidden="true">
+        {RAIL.map(([id, l]) => (
+          <a key={id} href={`#${id}`}>
+            <span className="lbl">{l}</span>
+            <span className="dot" />
+          </a>
+        ))}
+      </nav>
 
       <nav className="nav">
         <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -248,7 +311,9 @@ export default function Page() {
       </section>
 
       <section id="saga" className="saga">
-        <Image src="/photos/IMG_0535.jpg" alt="The hundred-strong Camp MythMaker gathered on their dragon-prowed bus at Burning Man" fill sizes="100vw" className="saga-bg" style={{ objectFit: 'cover', objectPosition: 'center 38%' }} />
+        <div className="saga-bg-wrap">
+          <Image src="/photos/IMG_0535.jpg" alt="The hundred-strong Camp MythMaker gathered on their dragon-prowed bus at Burning Man" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 38%' }} />
+        </div>
         <div className="saga-veil" />
         <div className="reveal center" style={{ position: 'relative', maxWidth: 880, margin: '0 auto' }}>
           <div className="eyebrow">The Saga</div>
