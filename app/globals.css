@@ -148,7 +148,7 @@ button { font-family: inherit; }
 .card-body p { margin: 0; font-size: 15.5px; line-height: 1.55; color: rgba(239, 230, 211, 0.75); }
 
 /* ---- saga ---- */
-.saga { position: relative; padding: 130px 24px; overflow: hidden; scroll-margin-top: 70px; }
+.saga { position: relative; padding: 130px 24px 72px; overflow: hidden; scroll-margin-top: 70px; }
 .saga-bg { position: absolute; inset: 0; object-fit: cover; object-position: center 38%; z-index: -2; }
 .saga-veil { position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, var(--bg) 0%, rgba(11, 8, 6, 0.78) 22%, rgba(11, 8, 6, 0.78) 78%, var(--bg) 100%); }
@@ -158,7 +158,7 @@ button { font-family: inherit; }
   text-transform: uppercase; color: rgba(239, 230, 211, 0.92); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7); }
 
 /* ---- quest ---- */
-.quest { position: relative; background: var(--bg-deep); padding: 110px 24px 130px; overflow: hidden;
+.quest { position: relative; background: var(--bg-deep); padding: 64px 24px 130px; overflow: hidden;
   text-align: center; scroll-margin-top: 70px; }
 .quest-wolf { width: min(560px, 86vw); margin: 0 auto -14px; display: block; height: auto;
   -webkit-mask-image: radial-gradient(58% 70% at 50% 50%, #000 55%, transparent 78%);
