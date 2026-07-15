@@ -26,10 +26,36 @@ Claude Design project `01cb940a-fcfa-44a2-b0c9-d716eb3b72b0`, file
 - Next.js 15 (App Router, TypeScript). The whole page is `app/page.tsx` — one
   `'use client'` component. Data lives in arrays at the top (NAV, RAIL,
   FESTIVALS, SHOW, WORKSHOPS, GALLERY, STATS).
-- `app/globals.css` holds the design tokens (`:root`), keyframes, and every
-  component class. No CSS modules, no Tailwind.
+- npm **workspace**: the site is the root; `packages/ui` is `@mythmaker/ui`,
+  the design system (see below). Next compiles it via `transpilePackages`.
+- `app/globals.css` holds the site's component classes + keyframes. The design
+  *tokens* are imported from `@mythmaker/ui/tokens/*.css` in `layout.tsx`;
+  globals.css overrides only the `--font-*` tokens to the next/font faces.
+  No CSS modules, no Tailwind.
 - `app/actions.ts` is the booking Server Action (SMTP2GO via nodemailer).
-- `app/layout.tsx` wires the fonts and metadata.
+- `app/layout.tsx` wires the fonts, the package token CSS, and metadata.
+
+## Design system — `@mythmaker/ui` (`packages/ui`)
+
+The MythMaker component library: 7 token CSS files + 15 typed React components
+(Button, Chip, Eyebrow, Heading, Lead, Medallion, ShowCard, Stat, TiltCard,
+Field/TextArea/SelectField, Marquee, ScrollCue, SectionIntro). Built with tsup
+to `dist/` (ESM + types); `scripts/bundle-css.mjs` also emits a flattened
+`dist/styles.css` (tokens inlined + display font shipped) for design-sync.
+
+- **The site dogfoods it.** `page.tsx` renders the real `<Marquee>` and `<Stat>`
+  from the package; more components can migrate over time. Photo-heavy components
+  (ShowCard, TiltCard, Medallion) stay as next/image in the site (the package
+  ships plain-`<img>` versions for Claude Design / non-Next use) — an intentional
+  deviation, don't "fix" it.
+- **It syncs to Claude Design.** `@mythmaker/ui` is a Claude Design *design-system*
+  project (`be05ec27-45c9-4cde-b24b-6616c63508e0`), so the design agent builds
+  with the real components. Push changes with the `/design-sync` skill (config in
+  `.design-sync/`, gotchas in `.design-sync/NOTES.md`). This is repo → Claude
+  Design; the repo stays the source of truth. Distinct from the older "Mythmaker"
+  design/prototype project (`01cb940a-…`, a regular project) above.
+- To rebuild the package: `npm run build --workspace @mythmaker/ui` (runs tsup +
+  bundle-css). Always use this, not bare `tsup` — see NOTES.md.
 
 ## Fonts
 
