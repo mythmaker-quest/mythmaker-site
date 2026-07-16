@@ -53,7 +53,8 @@ button { font-family: inherit; }
 .eyebrow {
   font-family: var(--font-cinzel), serif;
   font-size: var(--text-eyebrow); letter-spacing: 0.32em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 14px; text-shadow: var(--shadow-text-legible);
+  color: #ffbf2e; margin-bottom: 14px;
+  text-shadow: 0 0 20px rgba(255, 191, 46, 0.55), 0 0 7px rgba(255, 191, 46, 0.5), var(--shadow-text-legible);
 }
 .h2 {
   font-family: var(--font-knights), var(--font-cinzel), serif;
