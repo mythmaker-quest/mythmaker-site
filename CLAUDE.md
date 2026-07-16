@@ -56,6 +56,14 @@ to `dist/` (ESM + types); `scripts/bundle-css.mjs` also emits a flattened
   design/prototype project (`01cb940a-…`, a regular project) above.
 - To rebuild the package: `npm run build --workspace @mythmaker/ui` (runs tsup +
   bundle-css). Always use this, not bare `tsup` — see NOTES.md.
+- **The Claude Design copy is a few changes behind (as of 2026-07-15).** Since the
+  last sync these package tokens/components moved: `--text-eyebrow` 11.5px → 15px,
+  `--bronze` #b08d57 → #eaba50, and the `Marquee` component got a seamless-loop fix
+  (it repeats the set to fill the viewport so there's no gap on wide screens). Run
+  `/design-sync` to bring the CD project level when you want a deck/collateral to
+  match. Note: the site's unified vibrant-gold eyebrow (`#ffbf2e` + glow) lives in the
+  site's `.eyebrow` class in globals.css, NOT the package — the package `Eyebrow`
+  still defaults to `--amber`. Push it into the package if the DS should match.
 
 ## Fonts
 
@@ -87,6 +95,24 @@ biggest show · 33 productions since 1999. Burning Man is **heritage/proof**, no
 a call to action — the troupe has stepped back from the join-the-camp path.
 Don't add "upcoming Burning Man" content.
 
+## Copy voice & audience
+
+Audience read (spiral-dynamics): **Purple primary** — the seekers/tribe the Quest and
+workshops speak to, and the identity of the whole thing (ceremony, warriors, the old
+ways, belonging). Plus **Orange proof** for the one buyer who needs it: the event
+planner booking the Show (professional, festival-proven, fire-safety, reliable). Purple
+carries the emotion everywhere; concentrate the Orange at the money moments (the Show
+intro, the trust chips, the stats, the Book form) as understated evidence, never hype.
+
+**Em-dashes are OFF in the copy.** They read as an AI tell; Robin's standing rule is
+default-off. Reduce/eliminate them (commas, periods, colons, the brand `·` interpunct);
+never add them. Do NOT follow the Claude Design readme's "em-dashes for the turn" note.
+Run copy through the `spiral-dynamics` + `humanizer` skills. (Memory: `copy-em-dashes-off`.)
+
+Section eyebrows (The Show, Saga, Quest…) are all one **vibrant amber-gold `#ffbf2e`
+with a glow** — uniform, no per-section colours. Footer carries a "Forged by Novadiem"
+backlink to novadiem.com.
+
 ## Deploy
 
 `git push origin main` auto-deploys to production (Vercel, framework = nextjs).
@@ -97,3 +123,12 @@ Robin's GitHub is that address, not the gmail. `git config user.email` is
 already set in this clone; don't override it.
 
 Live: https://mythmaker-site.vercel.app · Repo: github.com/rheos/mythmaker-site
+
+## Related / planning docs
+
+In the parent `mythmaker/` folder (not this repo): `festival-targets.md` (researched
+US/Canada festivals for MythMaker to apply to, by region, with how-to-apply contacts)
+and `festival-tool-spec.md` (plan for a multi-tenant festival booking + logistics tool,
+MythMaker as tenant #1 — MOL-style pipeline, roster-as-network, FOAF logistics interop).
+Design decisions are in the project memory index (`festival-tool-concept`,
+`multi-tenant-by-default`).
