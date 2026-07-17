@@ -157,10 +157,6 @@ export default function FestivalToolPage() {
           quietly watching for new festivals and open application windows so you catch them.
         </li>
         <li>
-          A shared logistics app for the multi-party stuff: acts, camps, and organizers
-          sharing rides, passes, and camping.
-        </li>
-        <li>
           Other troupes using the tool too, which makes the festival list better for
           everyone.
         </li>
