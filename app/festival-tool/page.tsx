@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Festival Tool · Early Plan',
-  description: 'An early, plain-language plan for MythMaker’s festival booking + tour tool.',
+  description: 'An early, plain-language plan for the MythMaker festival booking and tour tool.',
   robots: { index: false, follow: false },
 };
 
@@ -49,19 +49,19 @@ export default function FestivalToolPage() {
       <p className="frame">
         A tool to take the scramble out of booking festivals, and to plan tours that
         actually pay. This is an early plan, written for you to poke holes in before we
-        build anything. You know this world far better than we do, so wherever we have it
-        wrong or missed something, that is the gold. The spots where your read should
-        overrule ours are marked <em>Q for you</em>.
+        build anything. You know this world far better than we do, so wherever we've
+        got it wrong or missed something, that's the gold. The spots where your read
+        should overrule ours are marked <em>Q for you</em>.
       </p>
 
       <h2>The idea in one breath</h2>
       <p>
         Right now, booking festivals lives in a dozen places: email threads, festival
         portals, a spreadsheet maybe, and a lot of it in your head and your phone. This
-        tool pulls it into one place. The festivals worth pitching, where each application
-        stands, who is in your performer network, who to cast for a given gig, and whether
-        a run of gigs makes money before you commit a crew to the road. Think of it as the
-        logistics behind making myths of your tours.
+        tool pulls it into one place: the festivals worth pitching, where each application
+        stands, who's in your performer network, who to cast for a given gig, and
+        whether a run of gigs makes money before you commit a crew to the road. Think of it
+        as the logistics behind making myths of your tours.
       </p>
 
       <h2>Two halves, with a hinge in the middle</h2>
@@ -81,8 +81,8 @@ export default function FestivalToolPage() {
         </li>
         <li>
           The pitch is about what MythMaker <em>offers</em>, the range from a lone fire
-          dancer to a fifty-person spectacle, not a fixed cast. You are selling the act,
-          not a specific lineup.
+          dancer to a fifty-person spectacle, not a fixed cast. You're selling the
+          act, not a specific lineup.
         </li>
       </ul>
       <div className="q">
@@ -101,7 +101,7 @@ export default function FestivalToolPage() {
           are proven enough for the slot.
         </li>
         <li>
-          Then the festival-facing details, the advance: vehicle passes, camping versus
+          Then the festival-facing details, the advance: vehicle passes, camping or a
           reserved area, wristband counts, load-in. You choose what to share with the
           festival and what stays internal.
         </li>
@@ -115,10 +115,10 @@ export default function FestivalToolPage() {
       <p>
         The most valuable thing early on might just be getting your network out of your head
         and phone into one place: the Canadian core and the American performers you can call
-        on, where each is based, what they do, when they are free, and how proven they are
-        with you. Then the tool can stop you double-booking someone, and show you where your
-        bench is thin. A perfect festival you cannot crew is worth knowing about <em>before</em>
-        you pitch it.
+        on, where each is based, what they do, when they're free, and how proven they
+        are with you. Then the tool can stop you double-booking someone, and show you where
+        your bench is thin. A perfect festival you can't crew is worth knowing about{' '}
+        <em>before</em> you pitch it.
       </p>
       <div className="q">
         <span className="qlabel">Q for you</span>
@@ -135,18 +135,19 @@ export default function FestivalToolPage() {
           <em>On the road</em>, a crew has to be paid. Nobody commits to a month on a bus
           for covered tickets. So a tour only works as a string of paying anchors (Ren
           faires, paying Viking fests, Highland games, corporate), with the unpaid brand-fit
-          gigs riding along on a trip that is already funded.
+          gigs riding along on a trip that's already funded.
         </li>
       </ul>
       <p>
         So the tool plans at the tour level with rough math: does the paid work cover crew
         wages, travel, and lodging, with margin left over? Only send a crew where the answer
         is yes. And the same routed plan doubles as your recruiting pitch. Show someone the
-        route and what they will clear at the end, and that is what gets them on the bus.
+        route and what they'll clear at the end, and that's what gets them on the
+        bus.
       </p>
       <div className="q">
         <span className="qlabel">Q for you</span>
-        <p>Is that how the money really works for you? What are the real numbers, day rates, travel, what a crew expects to walk away with?</p>
+        <p>Is that how the money really works for you? What are the real numbers: day rates, travel, what a crew expects to walk away with?</p>
       </div>
 
       <h2>What comes later, not first</h2>
@@ -167,16 +168,16 @@ export default function FestivalToolPage() {
 
       <h2>Signing in</h2>
       <p>
-        You would log in with your FOAF identity, one login shared across the FOAF tools, so
-        your account and your reputation travel with you.
+        You'd log in with your FOAF identity, one login shared across the FOAF tools,
+        so your account and your reputation travel with you.
       </p>
 
       <h2>The big questions for you</h2>
       <ol className="bigq">
         <li>Where have we got the festival and booking world wrong?</li>
-        <li>What is the one thing that, if this tool did it well, would actually save you time or land you gigs?</li>
+        <li>What's the one thing that, if this tool did it well, would actually save you time or land you gigs?</li>
         <li>What should we build first?</li>
-        <li>Anything about the roster, the money, or the logistics we are not seeing?</li>
+        <li>Anything about the roster, the money, or the logistics we're not seeing?</li>
       </ol>
 
       <div className="end">
