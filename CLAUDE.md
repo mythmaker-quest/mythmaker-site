@@ -124,11 +124,23 @@ already set in this clone; don't override it.
 
 Live: https://mythmaker-site.vercel.app · Repo: github.com/rheos/mythmaker-site
 
-## Related / planning docs
+## Related / planning docs — the festival tool
 
-In the parent `mythmaker/` folder (not this repo): `festival-targets.md` (researched
-US/Canada festivals for MythMaker to apply to, by region, with how-to-apply contacts)
-and `festival-tool-spec.md` (plan for a multi-tenant festival booking + logistics tool,
-MythMaker as tenant #1 — MOL-style pipeline, roster-as-network, FOAF logistics interop).
-Design decisions are in the project memory index (`festival-tool-concept`,
-`multi-tenant-by-default`).
+A separate product (multi-tenant festival booking + tour tool, MythMaker as tenant #1)
+is being designed in the parent `mythmaker/` folder (not this repo). Its name is
+**GigCaravan** (gigcaravan.com registered 2026-07-17; repo will live under Robin's
+personal account or Novadiem-Studio, not rheos). Target market spans troupes, touring
+musicians with crew, and solo acts who only need the application tracker. Its docs:
+
+- `festival-targets.md` — researched US/Canada festivals to pitch, by region, with contacts.
+- `festival-tool-spec.md` — the plan (MOL-style pipeline, roster-as-network, FOAF interop).
+- `festival-tool-data-model.md` — the schema (shared catalog vs private roster, engagement seam).
+- `festival-tool-backend-architecture.md` — the build: AdonisJS + Lucid + SQLite→Postgres,
+  FOAF auth (embed `FoafAuthClient`), Python agent workers, flat-rate host (NOT Vercel).
+- `festival-tool-for-hjeron.md` — plain-language spec for the domain partner to review.
+- `docs/festival-tool-domain-candidates.md` — product-name / domain search.
+
+**In THIS repo:** `app/festival-tool/page.tsx` is an unlisted, noindexed preview of the
+Hjeron spec, live at `/festival-tool`. Build of the actual tool is PAUSED pending Hjeron's
+review. Design decisions live in the project memory index (`festival-tool-concept`,
+`foaf-auth-service`, `framework-values-structure-discipline`, `multi-tenant-by-default`).

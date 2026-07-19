@@ -4,8 +4,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Festival Tool · Early Plan',
-  description: 'An early, plain-language plan for the MythMaker festival booking and tour tool.',
+  title: 'GigCaravan · Early Plan',
+  description: 'An early, plain-language plan for GigCaravan, the festival booking and tour tool.',
   robots: { index: false, follow: false },
 };
 
@@ -44,7 +44,7 @@ export default function FestivalToolPage() {
         <span className="tag">Private preview · for Hjeron</span>
       </div>
 
-      <span className="eyebrow">Festival Tool · Early Plan</span>
+      <span className="eyebrow">GigCaravan · Early Plan</span>
       <h1>Making myths of your tours</h1>
       <p className="frame">
         A tool to take the scramble out of booking festivals, and to plan tours that
@@ -52,6 +52,9 @@ export default function FestivalToolPage() {
         build anything. You know this world far better than we do, so wherever we've
         got it wrong or missed something, that's the gold. The spots where your read
         should overrule ours are marked <em>Q for you</em>.
+      </p>
+      <p className="frame">
+        And yes, it has a name now: you liked GigCaravan, so gigcaravan.com is registered.
       </p>
 
       <h2>The idea in one breath</h2>
@@ -150,6 +153,20 @@ export default function FestivalToolPage() {
         <p>Is that how the money really works for you? What are the real numbers: day rates, travel, what a crew expects to walk away with?</p>
       </div>
 
+      <h2>Not just troupes</h2>
+      <p>
+        Since first writing this, the idea has widened. The same scramble hits touring
+        musicians who bring session players and crew who join the tour or meet it at
+        stops. And it hits solo acts who don't manage anyone at all but still drown
+        in festival applications and deadlines. The plan is one tool with layers: a solo
+        performer uses just the application tracker; a band or a troupe like yours adds
+        the roster, casting, and tour math on top. You only see the layers you need.
+      </p>
+      <div className="q">
+        <span className="qlabel">Q for you</span>
+        <p>Think of the touring musicians and solo performers you know. Would any of them use just the application-and-deadlines part? Who comes to mind first?</p>
+      </div>
+
       <h2>What comes later, not first</h2>
       <ul>
         <li>
@@ -157,8 +174,8 @@ export default function FestivalToolPage() {
           quietly watching for new festivals and open application windows so you catch them.
         </li>
         <li>
-          Other troupes using the tool too, which makes the festival list better for
-          everyone.
+          Other troupes and touring acts using the tool too, which makes the festival list
+          better for everyone.
         </li>
       </ul>
 
