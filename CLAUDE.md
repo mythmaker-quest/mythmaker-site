@@ -6,6 +6,14 @@ performance troupe selling three things — **The Show** (book the troupe),
 (Hjeron's men's work, rites of passage, community consulting, old-ways skills).
 Commercial job: convert bookings.
 
+**Status (2026-07-23):** the client (Hjeron) has decided to keep the live mythmaker.ca on
+**WordPress**, maintained by his long-time dev Terran, rather than switch to this Next.js build.
+So this repo is Robin's redesign but is no longer confirmed as the live client site (adoption is
+Terran's call). It still deploys to mythmaker-site.vercel.app and doubles as the base for the
+GigCaravan preview. Robin's remaining interest here: the "Forged by Novadiem" footer backlink and
+optional retained dev access. Active Hjeron collaboration is now GigCaravan, not this site. Keep
+building/maintaining the site normally; just don't assume it becomes mythmaker.ca.
+
 ## Source of truth
 
 **This repo is the source of truth for what ships.** The live site builds and
