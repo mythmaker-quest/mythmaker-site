@@ -50,6 +50,60 @@ const STATS: [number, string, string][] = [
   [33, '33', 'Original productions since 1999'],
 ];
 
+const siteUrl = 'https://www.mythmaker.quest';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'PerformingGroup'],
+  '@id': `${siteUrl}/#organization`,
+  name: 'MythMaker',
+  url: siteUrl,
+  logo: `${siteUrl}/brand/wolf-medallion.png`,
+  image: [
+    `${siteUrl}/opengraph-image.png`,
+    `${siteUrl}/photos/IMG_6864.jpg`,
+    `${siteUrl}/photos/IMG_0535.jpg`,
+  ],
+  description:
+    'MythMaker is a professional fire performance and mythic ceremony company from British Columbia, offering festival shows, private event performances, The Quest, and workshops with Hjeron O’Sidhe.',
+  email: 'mythmakerburn@gmail.com',
+  foundingDate: '1999',
+  founder: {
+    '@type': 'Person',
+    name: 'Hjeron O’Sidhe',
+    jobTitle: 'Founder, director and swordmaster',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'British Columbia',
+    addressCountry: 'CA',
+  },
+  areaServed: ['Canada', 'United States', 'International'],
+  sameAs: [
+    'https://www.instagram.com/mythmaker_official/',
+    'https://www.facebook.com/mythmakerproductions/',
+    'https://www.tiktok.com/@mythmakermagic',
+    'https://youtube.com/mythmaker',
+  ],
+  makesOffer: [
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: 'Fire performance for festivals and private events',
+        serviceType: 'Fire performance',
+      },
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: 'Workshops and retreats with Hjeron O’Sidhe',
+        serviceType: 'Workshop',
+      },
+    },
+  ],
+};
+
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lb, setLb] = useState(-1);
@@ -57,6 +111,33 @@ export default function Page() {
   const [wolf, setWolf] = useState(0);
   const embersRef = useRef<HTMLCanvasElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
+  const lastScrollY = useRef(0);
+  const menuOpenRef = useRef(false);
+
+  useEffect(() => {
+    menuOpenRef.current = menuOpen;
+    if (menuOpen && navRef.current) navRef.current.classList.remove('nav--hidden');
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const navEl = navRef.current;
+    if (!navEl) return;
+    let nraf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(nraf);
+      nraf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const delta = y - lastScrollY.current;
+        if (y < 60) navEl.classList.remove('nav--hidden');
+        else if (delta > 4 && !menuOpenRef.current) navEl.classList.add('nav--hidden');
+        else if (delta < -4) navEl.classList.remove('nav--hidden');
+        lastScrollY.current = y;
+      });
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    return () => { cancelAnimationFrame(nraf); removeEventListener('scroll', onScroll); };
+  }, []);
 
   // reveal, count-up, embers, reduced-motion
   useEffect(() => {
@@ -207,9 +288,13 @@ export default function Page() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
+      />
       <div className="grain" aria-hidden />
       <div className="grain-noise" aria-hidden />
-      <nav className="chapter-rail" aria-hidden="true">
+      <nav className="chapter-rail" aria-label="Page sections">
         {RAIL.map(([id, l]) => (
           <a key={id} href={`#${id}`}>
             <span className="lbl">{l}</span>
@@ -218,7 +303,7 @@ export default function Page() {
         ))}
       </nav>
 
-      <nav className="nav">
+      <nav className="nav" aria-label="Primary" ref={navRef}>
         <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <Image src="/brand/wolf-medallion.png" alt="MythMaker medallion" width={36} height={36} style={{ borderRadius: '50%' }} />
           <Image src="/brand/logo-wordmark.png" alt="MythMaker" width={91} height={30} style={{ height: 30, width: 'auto' }} />
@@ -237,6 +322,7 @@ export default function Page() {
         </div>
       </nav>
 
+      <main id="main-content">
       <div id="top" />
 
       <section className="hero" ref={heroRef}>
@@ -248,7 +334,7 @@ export default function Page() {
             <div style={{ position: 'absolute', inset: -46, background: 'radial-gradient(50% 62% at 50% 50%, rgba(232,149,30,.3), transparent 70%)', animation: 'mmGlow 4.5s ease-in-out infinite', pointerEvents: 'none' }} />
             <Image src="/brand/logo-wordmark.png" alt="MYTHMAKER" width={548} height={180} priority className="hero-wordmark" />
           </div>
-          <div className="hero-tagline">Fire · Myth · Ceremony</div>
+          <h1 className="hero-tagline"><span className="sr-only">MythMaker: </span>Fire · Myth · Ceremony</h1>
           <p className="hero-lead">A professional company of fire artists, storytellers and myth-builders from the mountains of British Columbia, summoning living mythology to festivals, weddings and gatherings across the world.</p>
           <div className="hero-ctas">
             <a href="#book" className="btn btn-primary">Book a performance</a>
@@ -424,6 +510,7 @@ export default function Page() {
           <p style={{ margin: '18px 0 0', fontSize: 15, color: 'rgba(239,230,211,.55)' }}>Or write the hall directly at <a href="mailto:mythmakerburn@gmail.com">mythmakerburn@gmail.com</a></p>
         </div>
       </section>
+      </main>
 
       <footer className="footer">
         <div className="footer-inner">

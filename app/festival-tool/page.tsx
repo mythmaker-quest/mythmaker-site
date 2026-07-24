@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'GigCaravan · Early Plan',
   description: 'An early, plain-language plan for GigCaravan, the festival booking and tour tool.',
+  alternates: { canonical: '/festival-tool' },
   robots: { index: false, follow: false },
 };
 
