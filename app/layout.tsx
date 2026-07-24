@@ -15,15 +15,19 @@ const alegreya = Alegreya({ subsets: ['latin'], weight: ['400', '500', '700'], s
 const fell = IM_Fell_English({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-fell', display: 'swap' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mythmaker-site.vercel.app'),
+  metadataBase: new URL('https://mythmaker.quest'),
   title: 'MythMaker: Fire, Myth & Ceremony',
   description:
     'A professional company of fire artists, storytellers and myth-builders from British Columbia. Book the show, explore The Quest, or study with Hjeron.',
   openGraph: {
     title: 'MythMaker: Fire, Myth & Ceremony',
     description: 'Fire performance, the transmedia Quest, and workshops & retreats with Hjeron O’Sidhe.',
-    images: ['/brand/poster-ouroboros.jpg'],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MythMaker: Fire, Myth & Ceremony',
+    description: 'Fire performance, the transmedia Quest, and workshops & retreats with Hjeron O’Sidhe.',
   },
   icons: { icon: '/brand/wolf-medallion.png' },
 };
