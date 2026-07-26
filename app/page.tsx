@@ -11,7 +11,7 @@ const D = dims as Record<string, Dim>;
 const dim = (n: string) => { const d = D[n] ?? { w: 1600, h: 1066 }; return { width: d.w, height: d.h }; };
 
 const NAV: [string, string][] = [
-  ['#show', 'The Show'], ['#saga', 'The Saga'], ['#quest', 'The Quest'],
+  ['#show', 'The Show'], ['/saga', 'The Saga'], ['#quest', 'The Quest'],
   ['#gallery', 'Gallery'], ['#company', 'Company'], ['#workshops', 'Workshops'],
 ];
 const RAIL: [string, string][] = [
