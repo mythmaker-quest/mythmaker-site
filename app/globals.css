@@ -302,3 +302,10 @@ button { font-family: inherit; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; filter: none; }
 }
+
+/* /saga pillar filter — driven by PillarFilter client component */
+[data-filter-root][data-filter='show'] [data-pillar]:not([data-pillar='show']),
+[data-filter-root][data-filter='quest'] [data-pillar]:not([data-pillar='quest']),
+[data-filter-root][data-filter='workshops'] [data-pillar]:not([data-pillar='workshops']) {
+  display: none;
+}

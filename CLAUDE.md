@@ -6,13 +6,11 @@ performance troupe selling three things — **The Show** (book the troupe),
 (Hjeron's men's work, rites of passage, community consulting, old-ways skills).
 Commercial job: convert bookings.
 
-**Status (2026-07-23):** the client (Hjeron) has decided to keep the live mythmaker.ca on
-**WordPress**, maintained by his long-time dev Terran, rather than switch to this Next.js build.
-So this repo is Robin's redesign but is no longer confirmed as the live client site (adoption is
-Terran's call). It still deploys to mythmaker-site.vercel.app and doubles as the base for the
-GigCaravan preview. Robin's remaining interest here: the "Forged by Novadiem" footer backlink and
-optional retained dev access. Active Hjeron collaboration is now GigCaravan, not this site. Keep
-building/maintaining the site normally; just don't assume it becomes mythmaker.ca.
+**Status (2026-07-25):** mythmaker.ca stays on WordPress (Hjeron's call, maintained by Terran).
+This Next.js build is live at **mythmaker.quest** — Robin's redesign, independent of the WordPress
+site. The active Hjeron collaboration is GigCaravan, not this site, but the site ships real features
+and is maintained normally. Robin's interest: "Forged by Novadiem" backlink, a live portfolio piece,
+and GigCaravan preview base.
 
 ## Source of truth
 
@@ -130,7 +128,47 @@ deploys whose author isn't a verified team member (COMMIT_AUTHOR_REQUIRED), and
 Robin's GitHub is that address, not the gmail. `git config user.email` is
 already set in this clone; don't override it.
 
-Live: https://mythmaker-site.vercel.app · Repo: github.com/rheos/mythmaker-site
+Live: https://mythmaker.quest · Repo: github.com/rheos/mythmaker-site
+
+## Blog system
+
+The standard Novadiem static-blog stack, adapted from devweb. Reference implementation:
+`~/Code/foaftech/Growoperative/growoperative-landing` (fully integrated there; copy that pattern).
+
+**Source of truth: devweb** (`~/Code/novadiem/devweb`). growoperative-landing is a prior port and
+may be behind. Always diff against devweb before porting. Notable devweb-specific feature NOT to
+port: `lib/authors.ts` (pen-name registry for Robin's anonymized publishing — not relevant to
+mythmaker). Use `siteConfig.author.name` as the article fallback instead, same as growoperative.
+
+**Files to add:**
+- `src/site.config.ts` — the single config point: siteName, siteUrl, author, cta, categories
+- `src/lib/content.ts` — MDX spine (copy from devweb `lib/content.ts`, adapt as needed)
+- `src/lib/pillars.ts` — reads `siteConfig.categories`, derives PILLAR_TOKEN / PILLAR_LABEL / PILLAR_SLUG_PATH
+- `content/articles/*.mdx` — one file per post; Zod-validated at build time
+- `src/app/articles/page.tsx` — static index with `<PillarFilter>` in `<Suspense>`
+- `src/app/articles/[slug]/page.tsx` — reading view with `generateStaticParams`
+- `src/components/PillarFilter.tsx` — client island, reads `?topic=` via `useSearchParams`
+- `src/components/mdx/index.ts` — MDX component map passed to `compileMDX`
+
+**Frontmatter schema** (Zod, enforced at build): required `title`, `dek`, `date` (ISO), `pillar`
+(must match a category slug from `site.config.ts`), `slug` (lowercase-hyphen); optional `coverImage`,
+`author`, `read`, `draft`, `publication`.
+
+**Categories for mythmaker** — TBD when building; suggested starting point matching the three site
+pillars: `show` (fire performance, festival recaps), `quest` (the Quest game, mythic self-dev),
+`workshops` (men's work, rites of passage, old-ways skills).
+
+**Static-only constraint.** Like devweb: every article route must build as `○` (Static). The usual
+regression is an unwrapped `useSearchParams` in PillarFilter — keep it inside `<Suspense>`.
+
+**CSS is site-specific — not shared.** The growoperative-landing CSS modules use `--go-green` for
+all accents and HeadingNow (`--font-heading`) for titles. Mythmaker needs its own reskin: swap
+`--go-green` → `#ffbf2e` (vibrant amber-gold with glow, the uniform eyebrow color), fonts →
+Knights Quest for display, Alegreya for body — use `@mythmaker/ui` token variables throughout.
+The page structure and reading layout port directly; only the color/font tokens change.
+
+**Not integrated yet** (as of 2026-07-25). When building, use growoperative-landing as the direct
+reference — it's the only fully wired instance of this pattern.
 
 ## Related / planning docs — the festival tool
 

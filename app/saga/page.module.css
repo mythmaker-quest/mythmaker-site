@@ -1,0 +1,152 @@
+.index {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 140px 40px 160px;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffbf2e;
+  text-shadow: 0 0 18px rgba(255, 191, 46, 0.5);
+  margin: 0 0 16px;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 400;
+  color: var(--text);
+  margin: 0 0 12px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: rgba(239, 230, 211, 0.55);
+  margin: 0;
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+.filterPlaceholder {
+  height: 53px;
+  margin: 32px 0 8px;
+}
+
+.list {
+  margin-top: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr 60px;
+  gap: 20px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-top: 1px solid rgba(246, 196, 83, 0.1);
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.row:last-child {
+  border-bottom: 1px solid rgba(246, 196, 83, 0.1);
+}
+
+.row:hover {
+  transform: translateX(4px);
+}
+
+.rowMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rowPillar {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffbf2e;
+}
+
+.rowDate {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: rgba(239, 230, 211, 0.3);
+}
+
+.rowBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rowTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.rowDek {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(239, 230, 211, 0.5);
+  max-width: 60ch;
+}
+
+.rowRead {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: rgba(239, 230, 211, 0.3);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.empty {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(239, 230, 211, 0.35);
+  padding: 28px 0;
+  border-top: 1px solid rgba(246, 196, 83, 0.1);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .index {
+    padding: 120px 20px 120px;
+  }
+
+  .row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'meta read'
+      'body body';
+    gap: 8px 16px;
+    padding: 20px 0;
+  }
+
+  .rowMeta {
+    grid-area: meta;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .rowBody { grid-area: body; }
+  .rowRead { grid-area: read; }
+
+  .rowTitle {
+    font-size: clamp(18px, 5vw, 22px);
+  }
+}

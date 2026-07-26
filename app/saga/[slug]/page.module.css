@@ -1,0 +1,135 @@
+.readingColumn {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 120px 40px 160px;
+}
+
+.breadcrumb {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(239, 230, 211, 0.4);
+  margin: 0 0 40px;
+}
+
+.breadcrumb a {
+  color: #ffbf2e;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--gold-bright);
+}
+
+.articleH1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.articleDek {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.55;
+  color: rgba(239, 230, 211, 0.65);
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.metaRow {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(239, 230, 211, 0.35);
+  margin: 0 0 56px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(246, 196, 83, 0.1);
+}
+
+.articleBody {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.articleBody p {
+  margin: 0 0 1.5em;
+}
+
+.articleBody p:last-child {
+  margin-bottom: 0;
+}
+
+.articleBody h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  margin: 2em 0 0.6em;
+  line-height: 1.2;
+}
+
+.articleBody h3 {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffbf2e;
+  margin: 2em 0 0.8em;
+}
+
+.articleBody a {
+  color: #ffbf2e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 191, 46, 0.4);
+}
+
+.articleBody a:hover {
+  text-decoration-color: #ffbf2e;
+}
+
+.cta {
+  margin-top: 72px;
+  padding: 32px 36px;
+  border: 1px solid rgba(255, 191, 46, 0.2);
+  background: rgba(255, 191, 46, 0.04);
+}
+
+.cta p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: rgba(239, 230, 211, 0.7);
+  margin: 0 0 16px;
+  line-height: 1.55;
+}
+
+.cta a {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffbf2e;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.cta a:hover {
+  color: var(--gold-bright);
+}
+
+@media (max-width: 640px) {
+  .readingColumn {
+    padding: 100px 20px 120px;
+  }
+}
