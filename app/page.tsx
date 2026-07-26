@@ -15,7 +15,7 @@ const NAV: [string, string][] = [
   ['#gallery', 'Gallery'], ['#company', 'Company'], ['#workshops', 'Workshops'],
 ];
 const RAIL: [string, string][] = [
-  ['show', 'Show'], ['saga', 'Saga'], ['quest', 'Quest'], ['gallery', 'Gallery'],
+  ['show', 'Show'], ['burn', 'Burn'], ['quest', 'Quest'], ['gallery', 'Gallery'],
   ['company', 'Company'], ['workshops', 'Workshops'], ['book', 'Book'],
 ];
 const FESTIVALS = ['Burning Man', 'Shambhala', 'Faerieworlds', 'Realms Unknown', 'Earthdance', 'Vancouver Island MusicFest', 'Starbelly Jam'];
@@ -208,8 +208,8 @@ export default function Page() {
       cleanups.push(() => { cancelAnimationFrame(raf); removeEventListener('resize', onResize); hero.removeEventListener('pointermove', onMove); hero.removeEventListener('pointerleave', onLeave); vio.disconnect(); });
     }
 
-    // saga parallax
-    const sagaWrap = document.querySelector<HTMLElement>('.saga-bg-wrap');
+    // burn parallax
+    const sagaWrap = document.querySelector<HTMLElement>('.burn-bg-wrap');
     if (sagaWrap && !reduce) {
       let sraf = 0;
       const onScroll = () => {
@@ -370,11 +370,11 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="saga" className="saga">
-        <div className="saga-bg-wrap">
+      <section id="burn" className="burn">
+        <div className="burn-bg-wrap">
           <Image src="/photos/IMG_0535.jpg" alt="The hundred-strong Camp MythMaker gathered on their dragon-prowed bus at Burning Man" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center 38%' }} />
         </div>
-        <div className="saga-veil" />
+        <div className="burn-veil" />
         <div className="reveal center" style={{ position: 'relative', maxWidth: 880, margin: '0 auto' }}>
           <div className="eyebrow">The Saga</div>
           <h2 className="h2">Forged in fire at Black Rock City</h2>
@@ -384,7 +384,7 @@ export default function Page() {
               <Stat key={label} value={target} label={label} />
             ))}
           </div>
-          <div className="saga-sep" aria-hidden><i /></div>
+          <div className="burn-sep" aria-hidden><i /></div>
         </div>
       </section>
 
