@@ -116,8 +116,8 @@ never add them. Do NOT follow the Claude Design readme's "em-dashes for the turn
 Run copy through the `spiral-dynamics` + `humanizer` skills. (Memory: `copy-em-dashes-off`.)
 
 Section eyebrows (The Show, Saga, Quest…) are all one **vibrant amber-gold `#ffbf2e`
-with a glow** — uniform, no per-section colours. Footer carries a "Forged by Novadiem"
-backlink to novadiem.com.
+with a glow** — uniform, no per-section colours. Footer carries a "Design by Novadiem"
+backlink to novadiem.com (standard wording across both sites; mythmaker.ca uses it too).
 
 ## Deploy
 

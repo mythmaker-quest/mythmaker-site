@@ -5,7 +5,7 @@ Columbia. Three pillars: **The Show** (book a performance), **The Quest** (a tra
 mythic game), and **Workshops & Retreats** (study with Hjeron).
 
 **Live:** https://mythmaker-site.vercel.app
-Built with Next.js 15 (App Router, TypeScript), deployed on Vercel. Site by
+Built with Next.js 15 (App Router, TypeScript), deployed on Vercel. Design by
 [Novadiem](https://novadiem.com).
 
 ## Orientation

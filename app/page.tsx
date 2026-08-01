@@ -519,7 +519,7 @@ export default function Page() {
             <div>
               <Image src="/brand/logo-wordmark.png" alt="MythMaker" width={91} height={30} style={{ height: 30, width: 'auto' }} />
               <div style={{ marginTop: 6, fontSize: 13.5, color: 'rgba(239,230,211,.5)' }}>© MythMaker · British Columbia, Canada</div>
-              <div style={{ marginTop: 4, fontSize: 13, color: 'rgba(239,230,211,.4)' }}>Site by <a href="https://novadiem.com" target="_blank" rel="noopener">Novadiem</a></div>
+              <div style={{ marginTop: 4, fontSize: 13, color: 'rgba(239,230,211,.4)' }}>Design by <a href="https://novadiem.com" target="_blank" rel="noopener">Novadiem</a></div>
             </div>
           </div>
           <div className="footer-social">
