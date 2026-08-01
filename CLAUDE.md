@@ -130,6 +130,14 @@ already set in this clone; don't override it.
 
 Live: https://mythmaker.quest · Repo: github.com/rheos/mythmaker-site
 
+**Vercel:** project `mythmaker-site`, team `robins-projects-8ddb2c8d` (IDs in
+`.vercel/project.json`). Production URL `https://mythmaker-site.vercel.app`. The
+`mythmaker.quest` / `www.mythmaker.quest` domains are aliases on this same project and serve
+the latest production deploy, so the domain and the `.vercel.app` URL are the same build
+(verified byte-identical). A **public read-only copy** of the repo lives at
+github.com/mythmaker-quest/mythmaker-site (pushed 2026-07-31 for Terran; can drift from the
+private `rheos` origin).
+
 ## Blog system
 
 The standard Novadiem static-blog stack, adapted from devweb. Reference implementation:
