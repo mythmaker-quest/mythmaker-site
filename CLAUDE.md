@@ -9,7 +9,7 @@ Commercial job: convert bookings.
 **Status (2026-07-25):** mythmaker.ca stays on WordPress (Hjeron's call, maintained by Terran).
 This Next.js build is live at **mythmaker.quest** — Robin's redesign, independent of the WordPress
 site. The active Hjeron collaboration is GigCaravan, not this site, but the site ships real features
-and is maintained normally. Robin's interest: "Forged by Novadiem" backlink, a live portfolio piece,
+and is maintained normally. Robin's interest: "Design by Novadiem" backlink, a live portfolio piece,
 and GigCaravan preview base.
 
 ## Source of truth
