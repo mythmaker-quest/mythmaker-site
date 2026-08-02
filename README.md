@@ -52,4 +52,6 @@ npm run build --workspace @mythmaker/ui   # rebuild the design system package
 The code is public for reference. Photography, the MythMaker brand marks, the Quest
 card art, and the article texts belong to MythMaker; Knights Quest is the company's
 display font. If you are porting from this build, `globals.css` and `page.tsx` contain
-the exact values and logic for every effect.
+the exact values and logic for every effect, and **[PORTING.md](PORTING.md)** is the
+itemized guide: what a port typically misses, where each piece lives, and the assets
+ready to reuse.
